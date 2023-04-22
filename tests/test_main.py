@@ -12,10 +12,12 @@ class Test(TestCase):
         assert is_cube_root(27)
         assert not is_cube_root(2)
         assert is_cube_root(1)
+        assert is_cube_root(729)
 
     def test_is_odd_str(self):
         assert is_cube_root_str("0") == "0 is a cube-root."
         assert is_cube_root_str("1") == "1 is a cube-root."
+        assert is_cube_root_str("729") == "729 is a cube-root."
         assert is_cube_root_str("2") == "2 is not a cube-root."
         assert is_cube_root_str("-1") == "Please enter a number."
         assert is_cube_root_str("A") == "Please enter a number."

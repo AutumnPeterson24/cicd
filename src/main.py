@@ -8,7 +8,7 @@ def is_cube_root(num: int) -> bool:
     """Return True if num is a cube-root, False otherwise."""
     if num == 1:
         return True
-    return (num ** (1/3) % 3) == 0
+    return (round(num ** (1/3)) % 3) == 0
 
 
 def is_cube_root_str(num: str) -> str:
