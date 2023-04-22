@@ -11,6 +11,7 @@ class Test(TestCase):
         assert is_cube_root(0)
         assert is_cube_root(27)
         assert not is_cube_root(2)
+        assert is_cube_root(1)
 
     def test_is_odd_str(self):
         assert is_cube_root_str("0") == "0 is a cube-root."
