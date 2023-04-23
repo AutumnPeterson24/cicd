@@ -15,6 +15,6 @@ def is_cube_root(num: float) -> bool:
 def is_cube_root_str(num: str) -> str:
     """Return a string indicating whether num is a cube root."""
     if num.lstrip("-").isnumeric():
-        return f"{num} is {'a cube-root' if is_cube_root(int(num)) else 'not a cube-root'}."
+        return f"(+/-) {num.lstrip('-')} is {'a cube-root' if is_cube_root(int(num)) else 'not a cube-root'}."
     else:
         return "Please enter a number."
