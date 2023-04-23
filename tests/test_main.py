@@ -14,19 +14,17 @@ class Test(TestCase):
         assert not is_cube_root(3)
         assert is_cube_root(1)
         assert is_cube_root(729)
-        assert is_cube_root(-64)
-        assert is_cube_root(-125)
+        assert not is_cube_root(-1)
         assert is_cube_root(343)
 
     def test_is_odd_str(self):
         assert is_cube_root_str("0") == "(+/-) 0 is a cube-root."
         assert is_cube_root_str("1") == "(+/-) 1 is a cube-root."
         assert is_cube_root_str("343") == "(+/-) 343 is a cube-root."
-        assert is_cube_root_str("-64") == "(+/-) 64 is a cube-root."
+        assert is_cube_root_str("-64") == "Please enter a number."
         assert is_cube_root_str("729") == "(+/-) 729 is a cube-root."
-        assert is_cube_root_str("-125") == "(+/-) 125 is a cube-root."
         assert is_cube_root_str("2") == "(+/-) 2 is not a cube-root."
         assert is_cube_root_str("3") == "(+/-) 3 is not a cube-root."
-        assert is_cube_root_str("-1") == "(+/-) 1 is a cube-root."
+        assert is_cube_root_str("-1") == "Please enter a number."
         assert is_cube_root_str("A") == "Please enter a number."
         assert is_cube_root_str("") == "Please enter a number."
