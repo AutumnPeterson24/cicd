@@ -1,20 +1,19 @@
 """
-cube-root number checker
+Multiple of 10 number checker
 Author: Autumn Peterson
 """
 
 
-def is_cube_root(num: int) -> bool:
-    """Return True if num is a cube-root, False otherwise."""
-    if num == 1:
-        return True
-    if (round(abs(num ** (1/3))) % 3) == 0 or (round(abs(num ** (1/3))) % 2) == 0 or (round(abs(num ** (1/3))) % 5) == 0 or (round(abs(num ** (1/3))) % 7) == 0:
-        return True
+def is_mult_of_10(num: int) -> bool:
+    """Return True if num is a multiple of 10, False otherwise."""
+    if num == 0:
+        return False
+    return num % 10 == 0
 
 
-def is_cube_root_str(num: str) -> str:
-    """Return a string indicating whether num is a cube root."""
+def is_mult_of_10_str(num: str) -> str:
+    """Return a string indicating whether num is a multiple of 10."""
     if num.isnumeric():
-        return f"(+/-) {num} is {'a cube-root' if is_cube_root(int(num)) else 'not a cube-root'}."
+        return f"{num} is {'a multiple of 10' if is_mult_of_10(int(num)) else 'not a multiple of 10'}."
     else:
         return "Please enter a number."

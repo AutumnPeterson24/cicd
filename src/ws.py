@@ -4,7 +4,7 @@ Author: Wolf Paulus (https://wolfpaulus.com)
 """
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from time import asctime
-from main import is_cube_root
+from main import is_mult_of_10
 
 hostName = "0.0.0.0"
 serverPort = 8080
@@ -17,7 +17,7 @@ class MyServer(BaseHTTPRequestHandler):
         elif self.path == "/" or self.path.startswith("/?number="):
             status = 200
             number = self.path.split("=")[1] if self.path.startswith("/?number=") else ""
-            result = f"(+/-) {number} is {'a cube root' if is_cube_root(int(number)) else 'is not a cube-root'}." if number.isnumeric() else ""
+            result = f"{number} is {'a cube root' if is_mult_of_10(int(number)) else 'is not a multiple of 10'}." if number.isnumeric() else ""
             with open('./src/response.html', 'r') as f:
                 # read the html template and fill in the parameters: path, time and result
                 content = f.read().format(path=self.path, time=asctime(), result=result)
