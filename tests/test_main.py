@@ -11,6 +11,7 @@ class Test(TestCase):
         assert is_cube_root(0)
         assert is_cube_root(27)
         assert not is_cube_root(2)
+        assert not is_cube_root(3)
         assert is_cube_root(1)
         assert is_cube_root(729)
         assert is_cube_root(-64)
@@ -25,6 +26,7 @@ class Test(TestCase):
         assert is_cube_root_str("729") == "(+/-) 729 is a cube-root."
         assert is_cube_root_str("-125") == "(+/-) 125 is a cube-root."
         assert is_cube_root_str("2") == "(+/-) 2 is not a cube-root."
+        assert is_cube_root_str("3") == "(+/-) 3 is not a cube-root."
         assert is_cube_root_str("-1") == "(+/-) 1 is a cube-root."
         assert is_cube_root_str("A") == "Please enter a number."
         assert is_cube_root_str("") == "Please enter a number."
