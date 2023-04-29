@@ -18,7 +18,7 @@ class MyServer(BaseHTTPRequestHandler):
         elif self.path == "/" or self.path.startswith("/?number="):
             status = 200
             number = self.path.split("=")[1] if self.path.startswith("/?number=") else ""
-            if self.headers.get('Content-Type') == 'application/json':
+            if self.headers.get('Content-Type') == 'Accept: application/json':
                 content_type = "application/json"
                 if number.isnumeric():
                     data_dict = {
