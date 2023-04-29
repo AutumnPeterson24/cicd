@@ -18,7 +18,7 @@ class MyServer(BaseHTTPRequestHandler):
         elif self.path == "/" or self.path.startswith("/?number="):
             status = 200
             number = self.path.split("=")[1] if self.path.startswith("/?number=") else ""
-            if self.headers.get('Content-Type') == 'Accept: application/json':
+            if self.headers.get('Accept') == 'application/json':
                 content_type = "application/json"
                 if number.isnumeric():
                     data_dict = {
@@ -28,7 +28,7 @@ class MyServer(BaseHTTPRequestHandler):
                         "container_name": "erau01",
                         "message": f"multiple of 10 number checker Web-service"
                     }
-                    status, content = 200, json.dumps(data_dict)
+                    status, content, content_type = 200, json.dumps(data_dict), "application/json"
                 else:
                     status, content = 400, "Request cannot be made."
             else:
